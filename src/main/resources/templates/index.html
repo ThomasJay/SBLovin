@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/fragments/layouts/base_layout}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+<section layout:fragment="content">
+    <h1>Home Page</h1>
+    <p th:text="${welcome}">Welcome message</p>
+
+    <p>This is our home page</p>
+    <br/>
+    <select>
+        <option th:each="priceItem : ${prices}" th:value="${priceItem.productNumber}" th:text="${priceItem.productName}" />
+    </select>
+
+
+</section>
+
+
+
+</body>
+</html>
